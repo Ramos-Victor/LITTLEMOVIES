@@ -12,13 +12,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body class="<?php echo (isset($_GET['page']) && $_GET['page'] == 'login') ? 'bg-dark' : ''; ?>">
+  <body class="<?php echo (isset($_GET['page']) && $_GET['page'] == 'login' || $_GET['page'] == 'register' ) ? 'bg-dark' : ''; ?>">
     <?php
-        $excludedPages = ['pages/404.php', 'pages/login.php'];
+        $nav = [
+            '?page=home' => 'Home',
+            '?page=registerMovie' => 'Register Movie',
+        ];
+
+        $excludedPages = ['pages/404.php', 'pages/login.php', 'pages/register.php' ];
         $page = loadPages();
         
         if (!in_array($page, $excludedPages)) {
-            require "components/nav.php";
+            NavBar($nav);
         }
     ?>
     <div class="container-fluid mt-3">
