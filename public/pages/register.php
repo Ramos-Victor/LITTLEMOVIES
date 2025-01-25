@@ -5,7 +5,7 @@
             <form action="\pages\forms\register.php" method="POST">
                 <div class="form-group">
                     <label for="name">Username</label>
-                    <input type="text" class="form-control" name="nm_name" placeholder="Type your e-mail" required>
+                    <input type="text" class="form-control" name="nm_user" placeholder="Type your e-mail" required>
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
